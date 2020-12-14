@@ -25,3 +25,7 @@ Cette classe permet de faire la somme des salaires des employés d'une entreprise
 Recommencez en remplaçant tous les `throw new NotImplementedException();` par une et ***une seule*** ligne de code. Tous les tests originels présents dans le projet `SalaryCalculatorTest` doivent passer verts à la fin !
 
 *Conseil*: servez-vous de LINQ !
+
+### Règles de calcul des salaires
+
+Il y a 7 jours dans une semaine, 4 semaines dans un mois et 12 mois par année. 

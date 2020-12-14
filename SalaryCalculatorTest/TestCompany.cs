@@ -18,7 +18,7 @@ namespace SalaryCalculatorTest
                 new Employee { Name = "Test2", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 }
             };
             Assert.AreEqual(2800, company.MonthlySalaryExpenditures,
-                            "A company with two employees earning 1 400.0 $ each should spend 2 800.0 $ each month");
+                            "A company with two employees earning 1 400.0 $ should spend 2 800.0 $ each month");
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace SalaryCalculatorTest
                 new Employee { Name = "Test2", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 }
             };
             Assert.AreEqual(33600.0d, company.YearlySalaryExpenditures,
-                            "A company with two employees earning 1 400.0 $ each should spend 33 600 $ each year"); 
+                            "A company with two employees earning 1 400.0 $ should spend 33 600 $ each year"); 
         }   
     }
 }
