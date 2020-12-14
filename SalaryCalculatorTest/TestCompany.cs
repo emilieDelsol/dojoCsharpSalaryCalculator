@@ -7,17 +7,9 @@ using System.Text;
 namespace SalaryCalculatorTest
 {
     public class TestCompany
-    {
+    {   
         [Test]
-        public void TestZeroSalaryCompany()
-        {
-            Company company = new Company { Name = "Test" };
-            Assert.AreEqual(0, company.MonthlySalaryExpenditures, 
-                            "A company with no employees should have no salary expenditures");
-        }
-        
-        [Test]
-        public void TestCompanyWithEmployees()
+        public void TestCompanyWithEmployeesMonthly()
         {
             Company company = new Company { Name = "Test" };
             company.Employees = new List<Employee>
@@ -25,8 +17,8 @@ namespace SalaryCalculatorTest
                 new Employee { Name = "Test1", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 },
                 new Employee { Name = "Test2", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 }
             };
-            Assert.AreEqual(2000, company.MonthlySalaryExpenditures,
-                            "A company with two salaries equals to 1000 $ should spend 2000 $"); 
+            Assert.AreEqual(2800, company.MonthlySalaryExpenditures,
+                            "A company with two employees earning 1 400.0 $ each should spend 2 800.0 $ each month");
         }
 
         [Test]
@@ -38,8 +30,8 @@ namespace SalaryCalculatorTest
                 new Employee { Name = "Test1", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 },
                 new Employee { Name = "Test2", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 }
             };
-            Assert.AreEqual(1800.0, company.MonthlySalaryExpenditures,
-                            "A company with two salaries equals to 1000 $ should spend 24 000 $ yearly");
-        }
+            Assert.AreEqual(33600.0d, company.YearlySalaryExpenditures,
+                            "A company with two employees earning 1 400.0 $ each should spend 33 600 $ each year"); 
+        }   
     }
 }
