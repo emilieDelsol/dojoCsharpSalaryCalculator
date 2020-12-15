@@ -15,7 +15,7 @@ namespace SalaryCalculator
         {
             get
             {
-                throw new NotImplementedException();
+                return HourlySalary * WeekTimePeriodWorked ;
             }
         }
 
@@ -23,7 +23,7 @@ namespace SalaryCalculator
         {
             get 
             {
-                throw new NotImplementedException();
+                return HourlySalary * WeekTimePeriodWorked / 5;
             }
         }
 
@@ -31,8 +31,23 @@ namespace SalaryCalculator
         { 
             get
             {
-                throw new NotImplementedException();
+                return HourlySalary*WeekTimePeriodWorked * 4;
             }
         }
-    }
+
+		public double YearlySalary 
+        {
+			get
+			{
+                //taux horaire 10 /h
+                // 35h / semaine
+                // 1 mois = 4 semaines 
+                // 1 année 12 mois 
+                //salaire à la semaine => 35*10 = 350
+                // salaire au mois  = > 350*4=1400
+                //salaire à l'année => 1400 * 12 
+               return MonthlySalary * 12;
+			} 
+        }
+	}
 }

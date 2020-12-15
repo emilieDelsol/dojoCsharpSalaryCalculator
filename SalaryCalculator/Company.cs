@@ -17,7 +17,18 @@ namespace SalaryCalculator
         {
             get
             {
-                throw new NotImplementedException();
+                // Pour chaque employé dans ma liste Employees 
+                // Faire la somme de tous les salaires des employés par mois
+                double sum = 0; 
+                //  salaireMoisEmployé1 + salaireMoisEmployé2 = > salaires par mois de l'entreprise
+                // employé1.MonthlySalary + employé2.MonthlySalary
+
+                foreach(Employee employe in Employees)
+				{
+                    sum = sum + employe.MonthlySalary;
+				}
+                return sum;
+                //return Employees.Sum(e => e.MonthlySalary);
             }
         }
 
@@ -28,8 +39,24 @@ namespace SalaryCalculator
         {
             get
             {
-                throw new NotImplementedException();
+                return Employees.Sum(e => e.MonthlySalary * 12);
             }
         }
-    }
+
+		public double DailySalaryExpenditures 
+        { 
+            get 
+            {
+                return Employees.Sum(e => e.DailySalary);
+            } 
+        }
+
+		public double WeeklySalaryExpenditures 
+        {
+            get 
+            {
+                return Employees.Sum(e => e.WeeklySalary);
+            }  
+        }
+	}
 }
