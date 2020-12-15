@@ -29,5 +29,12 @@ namespace SalaryCalculatorTest
             Assert.AreEqual(1400.0d, employee.MonthlySalary,
                             "An employee earning 10.0 $ per hour working 35 hours a week earns 1400.0 $ per month");
         }
+        [Test]
+        public void TestEmployeeYearlySalary()
+        {
+            Employee employee = new Employee { Name = "Test", HourlySalary = 10.0d, WeekTimePeriodWorked = 35 };
+            Assert.AreEqual(16800.0d, employee.YearlySalary,
+                            "An employee earning 10.0 $ per hour working 35 hours a week earns 1400.0 $ per month");
+        }
     }
 }
